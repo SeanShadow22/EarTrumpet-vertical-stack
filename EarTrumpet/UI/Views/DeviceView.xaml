@@ -46,12 +46,12 @@
                         </TextBlock>
                     </Border>
 
-                    <Grid Grid.Row="1" Height="{DynamicResource Mutable_DeviceItemCellHeight}">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="{DynamicResource Mutable_IconCellWidth}" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="{DynamicResource Mutable_VolumeCellWidth}" />
-                        </Grid.ColumnDefinitions>
+                    <Grid Grid.Row="1" Width="{DynamicResource Mutable_DeviceItemCellHeight}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="{DynamicResource Mutable_IconCellWidth}" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="{DynamicResource Mutable_VolumeCellWidth}" />
+                        </Grid.RowDefinitions>
 
                         <Button Name="MuteButton"
                                 Width="{DynamicResource Mutable_AppIconSize}"
@@ -115,14 +115,15 @@
                             </Button.Content>
                         </Button>
 
-                        <ctl:VolumeSlider Grid.Column="1"
+                        <ctl:VolumeSlider Grid.Row="1"
+                                          Orientation="Vertical"
                                           PeakValue1="{Binding Device.PeakValue1}"
                                           PeakValue2="{Binding Device.PeakValue2}"
                                           PreviewMouseUp="TouchSlider_MouseUp"
                                           PreviewTouchUp="TouchSlider_TouchUp"
                                           Style="{StaticResource {x:Type Slider}}"
                                           Value="{Binding Device.Volume, Mode=TwoWay}" />
-                        <TextBlock Grid.Column="2"
+                        <TextBlock Grid.Row="2"
                                    Style="{StaticResource DeviceVolumeTextStyle}"
                                    Text="{Binding Device.Volume, Mode=OneWay}" />
                     </Grid>
