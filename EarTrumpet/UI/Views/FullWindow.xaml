@@ -193,7 +193,7 @@
                             <ItemsControl IsTabStop="False" ItemsSource="{Binding AllDevices}">
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
-                                        <StackPanel Orientation="Horizontal" />
+                                        <StackPanel Orientation="Vertical" />
                                     </ItemsPanelTemplate>
                                 </ItemsControl.ItemsPanel>
                             </ItemsControl>
